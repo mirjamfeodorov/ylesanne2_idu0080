@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5f9dd520-a3b3-4cf9-b4b0-622ae28bc282" activeEnvironment="Default" name="KT2_server_test" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="35473a76-4072-4be0-bce4-96bbc9cd41f9" wsaVersion="NONE" name="HinnakiriServicePortBinding" type="wsdl" bindingName="{http://www.ttu.ee/idu0080/hinnakiri/wsdl/1.0}HinnakiriServicePortBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort?wsdl"><con:part><con:url>http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort?wsdl</con:url><con:content><![CDATA[<definitions name="HinnakiriService" targetNamespace="http://www.ttu.ee/idu0080/hinnakiri/wsdl/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ttu.ee/idu0080/hinnakiri/wsdl/1.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns="http://www.ttu.ee/idu0080/hinnakiri/1.0" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.ttu.ee/idu0080/hinnakiri/1.0" schemaLocation="http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort?xsd=hinnakiri.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getHinnakiritResponse">
+    <part element="ns:getHinnakiriResponse" name="parameters"></part>
+  </message>
+  <message name="NewMessage"></message>
+  <message name="getHinnakiri">
+    <part element="ns:getHinnakiri" name="parameters"></part>
+  </message>
+  <portType name="HinnakiriService">
+    <operation name="getHinnakiri">
+      <input message="tns:getHinnakiri"></input>
+      <output message="tns:getHinnakiritResponse"></output>
+    </operation>
+  </portType>
+  <binding name="HinnakiriServicePortBinding" type="tns:HinnakiriService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getHinnakiri">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HinnakiriService">
+    <port binding="tns:HinnakiriServicePortBinding" name="HinnakiriPort">
+      <soap:address location="http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort?xsd=hinnakiri.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ttu.ee/idu0080/hinnakiri/1.0" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.ttu.ee/idu0080/hinnakiri/1.0">
+  <xs:element name="getHinnakiri" type="xs:string"/>
+  <xs:element name="getHinnakiriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hinnakiri" type="h:Hinnakiri"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hinnakiriFault"/>
+  <xs:complexType name="Toode">
+    <xs:sequence>
+      <xs:element name="kood" type="xs:int"/>
+      <xs:element name="nimetus" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Hind">
+    <xs:sequence>
+      <xs:element name="summa" type="xs:decimal"/>
+      <xs:element name="valuuta">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="EEK"/>
+            <xs:enumeration value="EUR"/>
+            <xs:enumeration value="USD"/>
+            <xs:enumeration value="RBL"/>
+            <xs:enumeration value="GBP"/>
+            <xs:enumeration value="SEK"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Hinnakiri">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="hinnakirjaRida">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="toode" type="h:Toode"/>
+            <xs:element name="hind" type="h:Hind"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort</con:endpoint></con:endpoints><con:operation id="49a854f8-44e6-4a76-b464-db22b530950e" isOneWay="false" action="" name="getHinnakiri" bindingOperationName="getHinnakiri" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6bc217fd-e910-4e47-8a3b-7e45b177998e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Yl4_Kodune_Server/services/HinnakiriPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.ttu.ee/idu0080/hinnakiri/1.0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getHinnakiri>hd</ns:getHinnakiri>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ttu.ee/idu0080/hinnakiri/wsdl/1.0/HinnakiriService/getHinnakiriRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

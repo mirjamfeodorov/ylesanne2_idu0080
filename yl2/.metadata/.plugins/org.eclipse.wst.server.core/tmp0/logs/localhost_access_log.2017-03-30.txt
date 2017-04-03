@@ -1,0 +1,9 @@
+127.0.0.1 - - [30/Mar/2017:09:49:13 +0300] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:09:49:14 +0300] "GET /Yl4_Kodune_Server/ HTTP/1.1" 200 294
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:09:49:17 +0300] "GET /Yl4_Kodune_Server/services/ HTTP/1.1" 200 1146
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:09:49:17 +0300] "GET /Yl4_Kodune_Server/services//?stylesheet=1 HTTP/1.1" 200 367
+127.0.0.1 - - [30/Mar/2017:09:49:34 +0300] "GET /Yl4_Kodune_Server/services/HinnakiriPort?wsdl HTTP/1.1" 200 2105
+127.0.0.1 - - [30/Mar/2017:09:49:34 +0300] "POST /Yl4_Kodune_Server/services/HinnakiriPort HTTP/1.1" 500 473
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:10:00:32 +0300] "GET /Yl4_Kodune_Server/services/HinnakiriPort?wsdl HTTP/1.1" 200 2105
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:10:00:32 +0300] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:10:00:35 +0300] "GET /Yl4_Kodune_Server/services/HinnakiriPort?wsdl HTTP/1.1" 200 2105
